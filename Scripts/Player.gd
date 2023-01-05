@@ -45,4 +45,4 @@ func _physics_process(delta):
 
 
 func _on_Portal_body_entered(body):
-	get_tree().change_scene("res://SecondScene.tscn")
+	get_tree().change_scene("res://Scenes/SecondScene.tscn")
