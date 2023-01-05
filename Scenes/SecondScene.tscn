@@ -1,8 +1,8 @@
 [gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Sprites/Tiles1_v2.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/Tiles1.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Tiles/Tiles1_v2.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Tiles/Tiles1.png" type="Texture" id=3]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 14.9375, 13.0625, 16, 13.0625, 16, 16, 14.9375, 16 )
