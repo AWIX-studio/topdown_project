@@ -42,3 +42,7 @@ func _physics_process(delta):
 		move_and_slide(vel * 2)
 	else:
 		move_and_slide(vel)
+
+
+func _on_Portal_body_entered(body):
+	get_tree().change_scene("res://SecondScene.tscn")
