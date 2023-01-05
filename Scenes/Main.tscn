@@ -1,9 +1,10 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/Tiles1_v2.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/Tiles1.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/BackGround1.png" type="Texture" id=4]
+[ext_resource path="res://Audio/ost1.mp3" type="AudioStream" id=5]
 
 [sub_resource type="GDScript" id=1]
 
@@ -338,7 +339,7 @@ points = PoolVector2Array( 0, 13, 16, 13.0625, 16, 16, 0, 16 )
 11/texture = ExtResource( 3 )
 11/tex_offset = Vector2( 0, 0 )
 11/modulate = Color( 1, 1, 1, 1 )
-11/region = Rect2( 81, 100, 15, 12 )
+11/region = Rect2( 81, 100, 16, 12 )
 11/tile_mode = 0
 11/occluder_offset = Vector2( 0, 0 )
 11/navigation_offset = Vector2( 0, 0 )
@@ -746,6 +747,17 @@ tracks/0/keys = {
 "values": [ Vector2( 386, -314 ) ]
 }
 
+[sub_resource type="Gradient" id=41]
+offsets = PoolRealArray( 0.404908, 1 )
+
+[sub_resource type="GradientTexture" id=42]
+gradient = SubResource( 41 )
+
+[sub_resource type="Environment" id=43]
+background_mode = 4
+adjustment_enabled = true
+adjustment_color_correction = SubResource( 42 )
+
 [node name="Main" type="Node2D"]
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
@@ -762,13 +774,23 @@ limit_smoothed = true
 smoothing_enabled = true
 script = SubResource( 1 )
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="Tiles" type="Node" parent="."]
+
+[node name="MainTileMap" type="TileMap" parent="Tiles"]
 scale = Vector2( 4, 4 )
 z_index = 1
 tile_set = SubResource( 5 )
 cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( -524281, 12, 0, -524280, 16, 0, -524279, 17, 0, -458751, 12, 0, -458750, 16, 0, -458749, 16, 0, -458748, 16, 0, -458747, 16, 0, -458746, 16, 0, -458745, 14, 0, -458744, 19, 0, -458743, 21, 0, -458742, 17, 0, -458739, 12, 0, -458738, 16, 0, -458737, 16, 0, -458736, 16, 0, -458735, 17, 0, -393215, 13, 0, -393214, 18, 0, -393213, 18, 0, -393212, 18, 0, -393211, 18, 0, -393210, 18, 0, -393209, 25, 0, -393208, 26, 0, -393207, 27, 0, -393206, 20, 0, -393203, 13, 0, -393202, 18, 0, -393201, 18, 0, -393200, 18, 0, -393199, 20, 0, -327679, 13, 0, -327678, 18, 0, -327677, 18, 0, -327676, 18, 0, -327675, 18, 0, -327674, 18, 0, -327673, 18, 0, -327672, 18, 0, -327671, 18, 0, -327670, 20, 0, -327667, 13, 0, -327666, 18, 0, -327665, 18, 0, -327664, 18, 0, -327663, 20, 0, -262143, 13, 0, -262142, 18, 0, -262141, 18, 0, -262140, 18, 0, -262139, 18, 0, -262138, 18, 0, -262137, 18, 0, -262136, 18, 0, -262135, 18, 0, -262134, 0, 0, -262133, 7, 0, -262132, 7, 0, -262131, 8, 0, -262130, 19, 0, -262129, 19, 0, -262128, 19, 0, -262127, 21, 0, -196607, 14, 0, -196606, 1, 0, -196605, 1, 0, -196604, 1, 0, -196603, 1, 0, -196602, 1, 0, -196601, 1, 0, -196600, 1, 0, -196599, 1, 0, -196598, 21, 0, -196597, 26, 0, -196596, 26, 0, -196595, 26, 0, -196594, 26, 0, -196593, 26, 0, -196592, 26, 0, -196591, 27, 0, -131071, 24, 0, -131070, 24, 0, -131069, 24, 0, -131068, 24, 0, -131067, 24, 0, -131066, 24, 0, -131065, 24, 0, -131064, 24, 0, -131063, 24, 0, -131062, 26, 0 )
+
+[node name="MainTileMap2" type="TileMap" parent="Tiles"]
+scale = Vector2( 2, 2 )
+z_index = 1
+tile_set = SubResource( 5 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -786426, 11, 0, -655349, 11, 0, -655328, 11, 0, -524284, 11, 0, -458744, 11, 0, -458736, 11, 0, -393216, 9, 0, -393215, 9, 0, -262145, 9, 0, -327680, 9, 0, -327679, 9, 0, -327678, 9, 0, -327677, 9, 0, -327676, 9, 0 )
 
 [node name="BackGround1" type="Sprite" parent="."]
 position = Vector2( 386, -314 )
@@ -777,5 +799,29 @@ texture = ExtResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="BackGround1"]
 autoplay = "BGAnim"
+playback_speed = 0.5
 anims/BGAnim = SubResource( 31 )
 anims/RESET = SubResource( 32 )
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2( 329, -937 )
+z_index = 10
+amount = 1000
+lifetime = 7.66
+preprocess = 66.06
+speed_scale = 1.13
+fixed_fps = 60
+emission_shape = 2
+emission_rect_extents = Vector2( 1000, 1 )
+spread = 24.78
+gravity = Vector2( 21.28, 98 )
+scale_amount = 5.98
+scale_amount_random = 0.4
+color = Color( 0, 0, 0, 0.545098 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 43 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+autoplay = true
