@@ -1,6 +1,6 @@
 [gd_scene load_steps=45 format=2]
 
-[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/Tiles1_v2.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/Tiles1.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/BackGround1.png" type="Texture" id=4]
@@ -748,7 +748,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Gradient" id=41]
-offsets = PoolRealArray( 0.404908, 1 )
+offsets = PoolRealArray( 0.429448, 1 )
 
 [sub_resource type="GradientTexture" id=42]
 gradient = SubResource( 41 )
