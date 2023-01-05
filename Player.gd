@@ -26,3 +26,5 @@ func _physics_process(delta):
 		move_and_slide(vel * 2)
 	else:
 		move_and_slide(vel)
+
+#vertux top
