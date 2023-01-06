@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const moveSpeed = 200
+var moveSpeed = 200
 var vel = Vector2()
 var sprint = false
 
@@ -43,6 +43,12 @@ func _physics_process(delta):
 	else:
 		move_and_slide(vel)
 
+func set_movespeed(a):
+	moveSpeed = a
+
 
 func _on_Portal_body_entered(body):
 	get_tree().change_scene("res://Scenes/SecondScene.tscn")
+
+
+
