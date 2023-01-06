@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/Tiles/Tiles1_v2.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Audio/ost1.mp3" type="AudioStream" id=5]
 [ext_resource path="res://Scenes/Portal.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=7]
+[ext_resource path="res://Scenes/Player_No_Sprint.gd" type="Script" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=70]
 points = PoolVector2Array( 14.0781, 10.0781, 16, 10.0781, 16, 16, 14.0781, 16 )
@@ -623,10 +624,14 @@ scale = Vector2( 4, 4 )
 z_index = 7
 texture = ExtResource( 3 )
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 484, -433 )
+[node name="Portal" parent="." instance=ExtResource( 6 )]
+position = Vector2( 729, -383 )
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Player2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 484, -433 )
+script = ExtResource( 8 )
+
+[node name="Camera2D" type="Camera2D" parent="Player2"]
 current = true
 zoom = Vector2( 0.75, 0.75 )
 limit_left = -32
@@ -636,8 +641,5 @@ limit_bottom = -130
 limit_smoothed = true
 smoothing_enabled = true
 script = SubResource( 69 )
-
-[node name="Portal" parent="." instance=ExtResource( 6 )]
-position = Vector2( 729, -383 )
 
 [connection signal="body_entered" from="Portal" to="." method="_on_Portal_body_entered"]

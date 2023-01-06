@@ -29,15 +29,6 @@ func _physics_process(delta):
 			$AnimationPlayer.play("player_walking")
 	else:
 		$AnimationPlayer.play("player_idle")
-		
-	
-	if Input.is_action_just_pressed("player_sprint"):
-		sprint = true
-		
-	if Input.is_action_just_released("player_sprint"):
-		sprint = false
-	
-	
 
 	if sprint:
 		move_and_slide(vel * 2)
@@ -50,6 +41,3 @@ func set_movespeed(a):
 
 func _on_Portal_body_entered(body):
 	get_tree().change_scene("res://Scenes/SecondScene.tscn")
-
-
-

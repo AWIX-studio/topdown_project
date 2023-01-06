@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Sprites/Tiles/TilePack_Instruction.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://icon.png" type="Texture" id=5]
 [ext_resource path="res://Scripts/Instruction.gd" type="Script" id=6]
 [ext_resource path="res://Sprites/Tiles/Blackout_Tiles.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Note.tscn" type="PackedScene" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=8]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -511,6 +512,10 @@ z_index = 9
 texture = ExtResource( 5 )
 
 [node name="Portal" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1747, 53 )
+position = Vector2( 1734, 55 )
+
+[node name="Note" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1281, 522 )
+z_index = 2
 
 [connection signal="body_entered" from="Portal" to="." method="_on_Portal_body_entered"]
