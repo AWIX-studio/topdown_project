@@ -3,6 +3,7 @@ extends KinematicBody2D
 var moveSpeed = 200
 var vel = Vector2()
 var sprint = false
+	
 
 
 func _physics_process(delta):
