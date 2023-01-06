@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="topdown_project"
-run/main_scene="res://Scenes/Main.tscn"
+run/main_scene="res://Scenes/Instruction.tscn"
 boot_splash/image="res://icon.png"
 config/icon="res://icon.png"
 

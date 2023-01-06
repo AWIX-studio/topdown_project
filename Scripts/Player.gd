@@ -49,7 +49,7 @@ func set_movespeed(a):
 
 
 func _on_Portal_body_entered(body):
-	get_tree().change_scene("res://Scenes/SecondScene.tscn")
+	get_tree().change_scene("res://Scenes/")
 
 
 
