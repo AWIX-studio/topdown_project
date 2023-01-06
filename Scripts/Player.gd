@@ -4,6 +4,7 @@ var moveSpeed = 200
 var vel = Vector2()
 var sprint = false
 
+
 func _physics_process(delta):
 	vel = Vector2.ZERO
 #	if Input.is_action_just_pressed("player_right") or Input.is_action_just_pressed("player_left") or Input.is_action_just_pressed("player_up") or Input.is_action_just_pressed("player_down"):

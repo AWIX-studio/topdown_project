@@ -324,14 +324,14 @@ script = SubResource( 7 )
 stream = ExtResource( 3 )
 autoplay = true
 
-[node name="Note" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1719, 56 )
-z_index = 9
-
 [node name="Logo" type="Sprite" parent="."]
 visible = false
 position = Vector2( 1690, 25 )
 z_index = 9
 texture = ExtResource( 5 )
+
+[node name="Note" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1637, 46 )
+z_index = 6
 
 [connection signal="body_entered" from="Note" to="." method="_on_Note_body_entered"]
